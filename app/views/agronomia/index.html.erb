@@ -1,0 +1,25 @@
+<h1>Listing agronomia</h1>
+
+<table>
+  <tr>
+    <th>Fecha hora</th>
+    <th>Whtot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @agronomia.each do |agronomium| %>
+  <tr>
+    <td><%= agronomium.Fecha_hora %></td>
+    <td><%= agronomium.WhTot %></td>
+    <td><%= link_to 'Show', agronomium %></td>
+    <td><%= link_to 'Edit', edit_agronomium_path(agronomium) %></td>
+    <td><%= link_to 'Destroy', agronomium, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Agronomium', new_agronomium_path %>
