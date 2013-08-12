@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "1.9.3p125 (2012-02-16) [i386-mingw32]"
 
 
 gem 'rails', '3.2.1'
