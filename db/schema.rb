@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130813015413) do
+ActiveRecord::Schema.define(:version => 20130813030534) do
 
   create_table "agronomia", :force => true do |t|
     t.datetime "Fecha_hora"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20130813015413) do
   end
 
   create_table "agronomiagaleras", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "agronomiaquimicas", :force => true do |t|
     t.datetime "Fecha_hora"
     t.integer  "WhTot"
     t.datetime "created_at", :null => false

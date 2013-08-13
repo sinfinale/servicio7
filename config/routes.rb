@@ -1,4 +1,6 @@
 Servicio7::Application.routes.draw do
+  resources :agronomiaquimicas
+
   resources :periodismos
 
   resources :odontologiaimprenta
