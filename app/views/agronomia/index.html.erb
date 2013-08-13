@@ -1,24 +1,32 @@
-<h1>Listing agronomia</h1>
+<h1>Consumo de agronomia en KWh</h1>
 
+<div class="datagrid">
 <table>
-  <tr>
-    <th>Fecha hora</th>
-    <th>Whtot</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Fecha y Hora</th>
+      <th>Whtot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @agronomia.each do |agronomium| %>
-  <tr>
-    <td><%= agronomium.Fecha_hora %></td>
-    <td><%= agronomium.WhTot %></td>
-    <td><%= link_to 'Show', agronomium %></td>
-    <td><%= link_to 'Edit', edit_agronomium_path(agronomium) %></td>
-    <td><%= link_to 'Destroy', agronomium, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+
+  <% @agronomia.each do |agronomium| %>
+  <tbody>
+    <tr>
+      <td><%= agronomium.Fecha_hora %></td>
+      <td><%= agronomium.WhTot %></td>
+      <td><%= link_to 'Show', agronomium %></td>
+      <td><%= link_to 'Edit', edit_agronomium_path(agronomium) %></td>
+      <td><%= link_to 'Destroy', agronomium, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <tbody>
 <% end %>
 </table>
+
+</div>
 
 <br />
 
@@ -28,7 +36,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>amCharts Example</title> 
         <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="amcharts.js" type="text/javascript"></script>
+        <script src="/assets/amcharts.js" type="text/javascript"></script>
         
         <script type="text/javascript">
         
@@ -196,4 +204,3 @@
             <input type="radio" checked="true" name="group" id="rb2" onclick="setPanSelect()">Pan
         </div>          
     </body>
-
