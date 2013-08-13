@@ -1,0 +1,2 @@
+module CafetinesHelper
+end

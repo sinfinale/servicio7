@@ -1,4 +1,50 @@
 Servicio7::Application.routes.draw do
+  resources :periodismos
+
+  resources :odontologiaimprenta
+
+  resources :odontologia3s
+
+  resources :odontologia2s
+
+  resources :odontologia1s
+
+  resources :medicinas
+
+  resources :mecanicacomplejos
+
+  resources :humanidades3s
+
+  resources :humanidades2s
+
+  resources :humanidades1s
+
+  resources :economia6s
+
+  resources :economia5s
+
+  resources :economia4s
+
+  resources :economia3s
+
+  resources :economia2s
+
+  resources :economia1s
+
+  resources :derechos
+
+  resources :comedorues
+
+  resources :cafetines
+
+  resources :auditoriummarmols
+
+  resources :artes
+
+  resources :agronomiagaleras
+
+  resources :agronomiadecanatos
+
   get "servicio/index"
 
   resources :agronomia

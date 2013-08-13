@@ -11,9 +11,170 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130812160820) do
+ActiveRecord::Schema.define(:version => 20130813015413) do
 
   create_table "agronomia", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "agronomiadecanatos", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "agronomiagaleras", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "artes", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "auditoriummarmols", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "cafetines", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comedorues", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "derechos", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "economia1s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "economia2s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "economia3s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "economia4s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "economia5s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "economia6s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "humanidades1s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "humanidades2s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "humanidades3s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "mecanicacomplejos", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "medicinas", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "odontologia1s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "odontologia2s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "odontologia3s", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "odontologiaimprenta", :force => true do |t|
+    t.datetime "Fecha_hora"
+    t.integer  "WhTot"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "periodismos", :force => true do |t|
     t.datetime "Fecha_hora"
     t.integer  "WhTot"
     t.datetime "created_at", :null => false

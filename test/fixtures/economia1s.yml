@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Fecha_hora: 2013-08-12 19:43:40
+  WhTot: 1
+
+two:
+  Fecha_hora: 2013-08-12 19:43:40
+  WhTot: 1

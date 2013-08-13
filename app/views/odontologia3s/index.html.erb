@@ -1,0 +1,25 @@
+<h1>Listing odontologia3s</h1>
+
+<table>
+  <tr>
+    <th>Fecha hora</th>
+    <th>Whtot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @odontologia3s.each do |odontologia3| %>
+  <tr>
+    <td><%= odontologia3.Fecha_hora %></td>
+    <td><%= odontologia3.WhTot %></td>
+    <td><%= link_to 'Show', odontologia3 %></td>
+    <td><%= link_to 'Edit', edit_odontologia3_path(odontologia3) %></td>
+    <td><%= link_to 'Destroy', odontologia3, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Odontologia3', new_odontologia3_path %>

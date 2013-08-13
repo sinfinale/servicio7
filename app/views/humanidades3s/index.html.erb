@@ -1,0 +1,25 @@
+<h1>Listing humanidades3s</h1>
+
+<table>
+  <tr>
+    <th>Fecha hora</th>
+    <th>Whtot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @humanidades3s.each do |humanidades3| %>
+  <tr>
+    <td><%= humanidades3.Fecha_hora %></td>
+    <td><%= humanidades3.WhTot %></td>
+    <td><%= link_to 'Show', humanidades3 %></td>
+    <td><%= link_to 'Edit', edit_humanidades3_path(humanidades3) %></td>
+    <td><%= link_to 'Destroy', humanidades3, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Humanidades3', new_humanidades3_path %>

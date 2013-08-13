@@ -1,0 +1,25 @@
+<h1>Listing derechos</h1>
+
+<table>
+  <tr>
+    <th>Fecha hora</th>
+    <th>Whtot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @derechos.each do |derecho| %>
+  <tr>
+    <td><%= derecho.Fecha_hora %></td>
+    <td><%= derecho.WhTot %></td>
+    <td><%= link_to 'Show', derecho %></td>
+    <td><%= link_to 'Edit', edit_derecho_path(derecho) %></td>
+    <td><%= link_to 'Destroy', derecho, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Derecho', new_derecho_path %>

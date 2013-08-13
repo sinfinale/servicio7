@@ -1,0 +1,25 @@
+<h1>Listing cafetines</h1>
+
+<table>
+  <tr>
+    <th>Fecha hora</th>
+    <th>Whtot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cafetines.each do |cafetine| %>
+  <tr>
+    <td><%= cafetine.Fecha_hora %></td>
+    <td><%= cafetine.WhTot %></td>
+    <td><%= link_to 'Show', cafetine %></td>
+    <td><%= link_to 'Edit', edit_cafetine_path(cafetine) %></td>
+    <td><%= link_to 'Destroy', cafetine, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cafetine', new_cafetine_path %>

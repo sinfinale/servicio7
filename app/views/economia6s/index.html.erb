@@ -1,0 +1,25 @@
+<h1>Listing economia6s</h1>
+
+<table>
+  <tr>
+    <th>Fecha hora</th>
+    <th>Whtot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @economia6s.each do |economia6| %>
+  <tr>
+    <td><%= economia6.Fecha_hora %></td>
+    <td><%= economia6.WhTot %></td>
+    <td><%= link_to 'Show', economia6 %></td>
+    <td><%= link_to 'Edit', edit_economia6_path(economia6) %></td>
+    <td><%= link_to 'Destroy', economia6, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Economia6', new_economia6_path %>

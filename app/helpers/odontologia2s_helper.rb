@@ -1,0 +1,2 @@
+module Odontologia2sHelper
+end

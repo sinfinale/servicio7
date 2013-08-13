@@ -1,0 +1,25 @@
+<%= form_for(@derecho) do |f| %>
+  <% if @derecho.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@derecho.errors.count, "error") %> prohibited this derecho from being saved:</h2>
+
+      <ul>
+      <% @derecho.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Fecha_hora %><br />
+    <%= f.datetime_select :Fecha_hora %>
+  </div>
+  <div class="field">
+    <%= f.label :WhTot %><br />
+    <%= f.number_field :WhTot %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
