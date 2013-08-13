@@ -23,3 +23,178 @@
 <br />
 
 <%= link_to 'New Comedorue', new_comedorue_path %>
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amCharts Example</title> 
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="amcharts.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+        
+        // declaring variables
+        var chart;
+        var dataProvider;
+        
+        // this method called after all page contents are loaded
+        window.onload = function() {
+            createChart();            
+            loadCSV("comedorues.csv");                                    
+        }
+        
+        // method which loads external data
+        function loadCSV(file) {
+            if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari
+                var request = new XMLHttpRequest();
+            }
+            else {
+                // code for IE6, IE5
+                var request = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            // load
+            request.open('GET', file, false);
+            request.send();
+            parseCSV(request.responseText);
+        }
+        
+        // method which parses csv data
+        function parseCSV(data){ 
+            //replace UNIX new lines
+            data = data.replace (/\r\n/g, "\n");
+            //replace MAC new lines
+            data = data.replace (/\r/g, "\n");
+            //split into rows
+            var rows = data.split("\n");
+            // create array which will hold our data:
+            dataProvider = [];
+            
+            // loop through all rows
+            for (var i = 0; i < rows.length; i++){
+                // this line helps to skip empty rows
+                if (rows[i]) {                    
+                    // our columns are separated by comma
+                    var column = rows[i].split(",");  
+                    
+                    // column is array now 
+                    // first item is date
+                    var date = column[0];
+                    // second item is value of the second column
+                    var value1 = column[1];
+                    // third item is value of the fird column 
+                    var value2 = column[2];
+
+                                   
+                    // create object which contains all these items:
+                    var dataObject = {date:date, value1:value1, value2:value2};
+                    // add object to dataProvider array
+                    dataProvider.push(dataObject);
+                }
+            }
+            // set data provider to the chart
+            chart.dataProvider = dataProvider;
+            // this will force chart to rebuild using new data            
+            chart.validateData();
+        }
+        
+        // method which creates chart
+        function createChart(){
+            // chart variable is declared in the top
+            chart = new AmCharts.AmSerialChart();
+            // here we tell the chart name of category 
+            // field in our data provider.
+            // we called it "date" (look at parseCSV method)
+            chart.pathToImages = "assets/";
+            chart.zoomOutButton = {
+                    backgroundColor: '#000000',
+                    backgroundAlpha: 0.15
+            };
+            //chart.addListener("dataUpdated", zoomChart);
+            chart.categoryField = "date";
+            chart.balloon.bulletSize = 5;
+            
+            
+
+            var categoryAxis = chart.categoryAxis;
+                //categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+                categoryAxis.minPeriod = "mm";
+                categoryAxis.labelFrequency = 1; // our data is daily, so we set minPeriod to DD
+                categoryAxis.dashLength = 1;
+                categoryAxis.gridAlpha = 0.5;
+                categoryAxis.position = "top";
+                categoryAxis.axisColor = "#DADADA";
+                categoryAxis.labelRotation = 90;
+
+
+            var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.dashLength = 1;
+                chart.addValueAxis(valueAxis);
+
+                        
+            // chart must have a graph
+            var graph = new AmCharts.AmGraph();
+            // graph should know at what field from data
+            // provider it should get values.
+            // let's assign value1 field for this graph
+            graph.title = "red line";
+            graph.valueField = "value1";
+            //graph.bullet = "round";
+            //graph.bulletBorderColor = "#FFFFFF";
+            //graph.bulletBorderThickness = 2;
+            //graph.lineThickness = 2;
+            graph.lineColor = "#5fb503";
+            //graph.negativeLineColor = "#efcc26";
+            //graph.hideBulletsCount = 50;
+            //graph.backgroundColor = "#FFFFFF"
+
+
+
+            // and add graph to the chart
+            chart.addGraph(graph);
+
+            chartCursor = new AmCharts.ChartCursor();
+            chartCursor.cursorPosition = "mouse";
+            chartCursor.pan = true; 
+            chart.addChartCursor(chartCursor);
+
+
+            var chartScrollbar = new AmCharts.ChartScrollbar();
+            chartScrollbar.graph = graph;
+            chartScrollbar.scrollbarHeight = 40;
+            chartScrollbar.color = "#FFFFFF";
+            chartScrollbar.autoGridCount = true;
+            chart.addChartScrollbar(chartScrollbar);           
+            // 'chartdiv' is id of a container 
+            // where our chart will be                        
+            chart.write('chartdiv');
+        }
+
+        function zoomChart() {
+            // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+            chart.zoomToIndexes(chartData.length - 40, chartData.length - 1);
+        }
+
+        function setPanSelect() {
+            if (document.getElementById("rb1").checked) {
+                chartCursor.pan = false;
+                chartCursor.zoomable = true;
+            } else {
+                chartCursor.pan = true;
+            }
+            chart.validateNow();
+        } 
+
+
+
+        </script>
+    </head>
+    <body >
+        <div id="chartdiv" style="width: 100%; height: 500px;"></div>
+        <div style="margin-left:35px;">
+            <input type="radio" name="group" id="rb1" onclick="setPanSelect()">Select
+            <input type="radio" checked="true" name="group" id="rb2" onclick="setPanSelect()">Pan
+        </div>          
+    </body>
+
+
